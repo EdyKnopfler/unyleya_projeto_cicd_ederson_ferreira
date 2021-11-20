@@ -21,10 +21,10 @@ stages:
       vmImage: ubuntu-latest
     steps:
     - bash: |
-        git push --prune https://$(GITHUB_PAT)@github.com/$REPO_NAME \
+        git pull https://$(GITHUB_PAT)@github.com/$REPO_NAME \
             +refs/remotes/origin/*:refs/heads/* +refs/tags/*:refs/tags/*
-      displayName: 'Copy to Github'
-      condition: eq(variables['Build.SourceBranch'], 'refs/heads/master')
+      displayName: 'Sincronizando do GitHub'
+      condition: eq(variables['Build.SourceBranch'], 'refs/heads/main')
     - task: Docker@2
       displayName: Build an image
       inputs:
