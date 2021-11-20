@@ -21,7 +21,7 @@ stages:
       vmImage: ubuntu-latest
     steps:
     - bash: |
-        git pull https://$(GITHUB_PAT)@github.com/$REPO_NAME \
+        git pull https://git@github.com/unyleya_projeto_cicd_ederson_ferreira.git \
             +refs/remotes/origin/*:refs/heads/* +refs/tags/*:refs/tags/*
       displayName: 'Sincronizando do GitHub'
       condition: eq(variables['Build.SourceBranch'], 'refs/heads/main')
