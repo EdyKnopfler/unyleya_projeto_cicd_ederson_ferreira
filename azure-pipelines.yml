@@ -24,7 +24,7 @@ stages:
         git pull https://git@github.com/EdyKnopfler/unyleya_projeto_cicd_ederson_ferreira.git \
             main
       displayName: 'Sincronizando do GitHub'
-      condition: eq(variables['Build.SourceBranch'], 'refs/heads/main')
+      #condition: eq(variables['Build.SourceBranch'], 'refs/heads/main')
     - task: Docker@2
       displayName: Build an image
       inputs:
