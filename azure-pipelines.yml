@@ -21,8 +21,8 @@ stages:
       vmImage: ubuntu-latest
     steps:
     - bash: |
-        git pull https://git@github.com/EdyKnopfler/unyleya_projeto_cicd_ederson_ferreira.git \
-            main
+        git remote add guiterrube git@github.com/EdyKnopfler/unyleya_projeto_cicd_ederson_ferreira.git
+        git pull guiterrube main
       displayName: 'Sincronizando do GitHub'
       #condition: eq(variables['Build.SourceBranch'], 'refs/heads/main')
     - task: Docker@2
