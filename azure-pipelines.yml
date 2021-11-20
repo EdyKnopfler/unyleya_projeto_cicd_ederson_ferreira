@@ -22,7 +22,7 @@ stages:
     steps:
     - bash: |
         git pull https://git@github.com/EdyKnopfler/unyleya_projeto_cicd_ederson_ferreira.git \
-            +refs/remotes/origin/*:refs/heads/* +refs/tags/*:refs/tags/*
+            main
       displayName: 'Sincronizando do GitHub'
       condition: eq(variables['Build.SourceBranch'], 'refs/heads/main')
     - task: Docker@2
